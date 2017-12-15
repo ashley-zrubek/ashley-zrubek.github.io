@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="header">
+	<div class="contain-width">
+		<a href="/"><img src="images/logo.png" alt="Logo here" /></a><br/>
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><a href="/about.html">about</a></li>
+			<li><a href="/contact.html">contact</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="contain-width-small content-container">
+	<h1>Contact Me</h1>
+	
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis, enim id mattis eleifend, diam urna auctor est, sed euismod mauris felis sit amet turpis. In id felis vel lectus sodales posuere at nec lacus.</p>
+
+	<p id="contactFormSubmitted" style="display: none;">Thanks for messaging! I'll get back to you as soon as I can.</p>
+	
+	<form action="" method="POST" id="contactForm">
+	
+		<p class="error" id="contactFormError" style="display: none;">Please fill out all fields.</p>
+	
+		<p><label>Name: </label><input type="text" name="name"></p>
+		<p><label>Email: </label><input type="email" name="email"></p>
+		<input type="hidden" name="*reply" value="email">
+		<input type="hidden" name="*honeypot">
+		<input type="hidden" name="*subject" value="Web Form Submission">
+		<p><label>Message: </label>
+		<textarea name="message" style="resize: none;"></textarea></p>
+		<div class="centered">
+			<button type="submit">Send</button>
+			<button type="reset">Reset</button>
+		</div>
+	
+	</form>
+	
+</div>
+
+<div class="footer">
+	<div class="contain-width">
+		this is the footer
+	</div>
+</div>
+
+</body>
+<script>
+$("#contactFormError").hide();
+$("#contactForm").submit(function(event) {
+	event.preventDefault();
+	
+	if ($("input[name=name]").val() == ""
+		|| $("input[name=email]").val() == ""
+		|| $("textarea[name=message]").val() == "")
+		$("#contactFormError").show("blind", 500);
+	else {
+		$.ajax({
+			url: "https://www.enformed.io/TOKEN",
+			method: "post",
+			dataType: "json",
+			accepts: "application/json",
+			data: $("#contactForm").serialize(),
+			success: function(){
+				$("#contactForm").fadeOut(500);
+				$("#contactFormSubmitted").fadeIn(700);
+			},
+			error: function(){
+				alert("Error");
+			}
+		});
+	}
+});
+</script>
+</html>

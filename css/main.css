@@ -1,0 +1,79 @@
+body {
+	background: #333;
+	background-image: url('../images/dark-suede.png');
+	background-attachment: fixed;
+	color: #333;
+}
+
+.contain-width {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.contain-width-small {
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.header, .footer {
+	padding: 10px;
+	z-index: 9;
+}
+
+.header {
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	padding: 10px;
+	z-index: 9;
+	text-align: center;
+}
+.header img {
+	max-width: 200px;
+}
+.header ul {
+	list-style-type: none;
+	padding: 10px;
+	margin: 10px 0;
+	margin-top: 0;
+	background: #fff;
+	opacity: 0.8;
+}
+.header ul li {
+	display: inline-block;
+	margin: 0 20px;
+}
+.header ul li a {
+	color: #7B8FDB;
+	transition: 0.3s;
+	text-decoration: none;
+}
+.header ul li a:hover {
+	color: #333;
+}
+
+.footer {
+	margin: 20px 0px;
+}
+
+.footer .contain-width {
+	background: #fff;
+	opacity: 0.8;
+	padding: 10px;
+}
+
+.content-container {
+	background: #fff;
+	opacity: 0.8;
+	padding: 40px;
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	padding: 5px;
+}
+
+.error {color: red;}
