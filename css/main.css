@@ -3,6 +3,7 @@ body {
 	background-image: url('../images/dark-suede.png');
 	background-attachment: fixed;
 	color: #333;
+	margin-bottom: 20px;
 }
 
 .contain-width {
@@ -30,9 +31,7 @@ body {
 	z-index: 9;
 	text-align: center;
 }
-.header img {
-	max-width: 200px;
-}
+.header img {max-width: 200px;}
 .header ul {
 	list-style-type: none;
 	padding: 10px;
@@ -54,9 +53,7 @@ body {
 	color: #333;
 }
 
-.footer {
-	margin: 20px 0px;
-}
+.footer {margin: 20px 0;}
 
 .footer .contain-width {
 	background: #fff;
